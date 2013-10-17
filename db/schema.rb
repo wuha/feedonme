@@ -11,7 +11,17 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131015081755) do
+ActiveRecord::Schema.define(:version => 20131017092330) do
+
+  create_table "entries", :force => true do |t|
+    t.integer  "feed_id"
+    t.text     "title"
+    t.text     "content"
+    t.datetime "date"
+    t.string   "unique_entriy_hash"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "feeds", :force => true do |t|
     t.string   "name"
@@ -25,6 +35,14 @@ ActiveRecord::Schema.define(:version => 20131015081755) do
     t.integer  "user_id"
     t.integer  "feed_id"
     t.integer  "unread_count"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "unread_entries", :force => true do |t|
+    t.integer  "entry_id"
+    t.integer  "feed_id"
+    t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

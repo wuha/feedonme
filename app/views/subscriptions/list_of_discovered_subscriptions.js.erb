@@ -1,0 +1,15 @@
+$(function() {
+	$('#multi_subscription_selection_dialog').html("<%= j render "list_of_discovered_subscriptions" %>").dialog({
+		height: 350,
+		minWidth: 700,
+		modal: true,
+		show: {
+			effect: "clip",
+			duration: 500
+		},
+
+	});
+	
+$('#dashboard_action_notification').text("");
+	
+});

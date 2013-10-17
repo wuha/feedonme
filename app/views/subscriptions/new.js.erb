@@ -1,0 +1,15 @@
+<%if @subscription.instance_of?(Array)%>
+	<% @subscription.each do |subscription|%>
+		$('#dashboard_subscription_list').append('<li id="feed_id_<%=subscription.id%>"><%= link_to subscription.name, show_feed_entries_path(subscription.id), method: :get, remote: true%></li>');
+	<%end%>
+	$(".ui-dialog-titlebar-close").trigger('click');
+<%else%>
+	$('#dashboard_subscription_list').append('<li id="feed_id_<%=@subscription.id%>"><%= link_to @subscription.name, show_feed_entries_path(@subscription.id), method: :get, remote: true%></li>');
+<%end%>
+$('form :text').val("");
+$("#dashboard_action_notification").text("");
+$('#add_subscription_btn').attr("disabled", false);
+
+
+
+

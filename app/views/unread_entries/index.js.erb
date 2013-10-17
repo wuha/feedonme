@@ -1,0 +1,5 @@
+$('#dashboard_entries ul').empty();
+<% @unread_entries.each do |entry|%>
+$('#dashboard_entries ul').append("<li><%= j link_to entry.title, show_feed_entry_path(entry.id), remote: true%></li>");
+<%end%>
+

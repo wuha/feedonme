@@ -1,2 +1,26 @@
-<h1>root page of feedonme</h1>
-<p>User not loggend in.</p>
+<h1>Dashboard of feedonme</h1>
+
+<p>Your are logged in! <%=@current_user.email%></p>
+<%= link_to "Logout", destroy_user_session_path, method: :delete%>
+
+<div id="dashboard_wrapper">
+
+	<div id="dashboard_top">
+		<div id="dashboard_action_notification">
+		</div>
+		<%=render "subscriptions/new" %>
+	</div>
+	
+	<div id="dashboard_subscriptions">
+		<%= render "subscriptions/list", collection: @user_subscriptions%>
+	</div>
+	<div id="dashboard_entries">
+		<ul></ul>
+	</div>
+	<div id="dashboard_entry">
+
+	</div>
+	<div id="multi_subscription_selection_dialog">
+	</div>
+
+</div>

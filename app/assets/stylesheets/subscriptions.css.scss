@@ -1,3 +1,10 @@
 // Place all the styles related to the Subscriptions controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+#choos_feed_list_container{
+	
+	height:  170px;
+	overflow-y: scroll;
+	border: 2px solid #bcbaba;
+	
+}

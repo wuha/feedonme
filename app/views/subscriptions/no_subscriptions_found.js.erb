@@ -1,0 +1,7 @@
+$(function() {
+		$("#dashboard_action_notification").text("No Feeds Found!");
+    setTimeout(function() {
+        $("#dashboard_action_notification").text("");
+        $('#add_subscription_btn').attr("disabled", false);
+    }, 2000);    
+});

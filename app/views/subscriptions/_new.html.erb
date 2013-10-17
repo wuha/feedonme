@@ -1,0 +1,4 @@
+<%= form_tag new_subscription_path, method: :get, remote: true do%>
+	<%= text_field_tag :url,nil, placeholder: "ULR", size: 60,id: "add_subscription_input"%>
+	<%= submit_tag "feedon", id: "add_subscription_btn"%>
+<%end%>

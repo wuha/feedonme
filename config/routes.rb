@@ -1,7 +1,14 @@
 Feedonme::Application.routes.draw do
-  resources :feeds
+  resources :unread_entries
 
+  resources :feeds
   resources :subscriptions
+  
+  get "feeds/:id/entries" => "entries#index", as: "show_feed_entries"
+  get "feeds/:id/unread_entries" => "unread_entries#index", as: "show_feed_unread_entries"
+  get "entries/:id/" => "entries#show", as: "show_feed_entry"
+  
+  delete "entries/:id/mark_as_read" => "unread_entries#delete", as: "mark_entry_as_read"
 
   get "home/index"
   root to: "home#index"

@@ -1,0 +1,3 @@
+<%=raw @entry.content%>
+<%= @entry.date%>
+<%= link_to "Mark as Read", mark_entry_as_read_path(@entry.id), method: :delete, remote: true%>

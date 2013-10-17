@@ -1,0 +1,14 @@
+<p>This website has multiple feed options. Select the feeds you’re interested in.</p>
+
+
+<%= form_tag new_subscription_path, remote: true, method: :get, id: 'add_subscription_form_js' do%>
+	<div id="choos_feed_list_container">
+		<% @feeds.each do |feed|%>
+			<label><%=	check_box_tag "multi_url[]", feed[0]%><%=feed[1]%></label>
+			<br>
+		<%end%>	
+	</div>
+	<%= submit_tag "Subscribe"	%>
+
+	
+<%end%>
