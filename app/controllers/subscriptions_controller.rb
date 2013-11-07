@@ -1,6 +1,6 @@
 class SubscriptionsController < ApplicationController
 	before_filter :authenticate_user!
-	include SubscriptionsHelper
+	include FeedsHelper
 
 	def new		  	
   	input_url=params[:url]

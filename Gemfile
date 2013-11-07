@@ -11,6 +11,8 @@ gem "feedzirra", "~> 0.1.3"
 gem "rest-open-uri", "~> 1.0.0"
 gem 'sidekiq'
 gem 'devise'
+gem 'sanitize'
+gem "clockwork", "~> 0.7.0"
 
 
 # Gems used only for assets and not required

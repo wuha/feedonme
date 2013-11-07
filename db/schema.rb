@@ -43,9 +43,12 @@ ActiveRecord::Schema.define(:version => 20131017092330) do
     t.integer  "entry_id"
     t.integer  "feed_id"
     t.integer  "user_id"
+    t.datetime "date"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+  
+  add_index "unread_entries", ["entry_id","user_id"], name: "index_unread_entries", unique: true
 
   create_table "users", :force => true do |t|
     t.string   "email",                  :default => "", :null => false

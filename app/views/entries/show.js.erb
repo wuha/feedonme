@@ -1,5 +1,6 @@
 $('#dashboard_entry').text("");
-$('#dashboard_entry').append($('<div>').attr('id','entry_detail_<%=@entry.id%>'));
+$('#dashboard_entry').append($('<div>').attr('id','entry_detail_<%=@entry.id%>').attr('class','entry_details'));
+$('#entry_detail_<%=@entry.id%>').append("<h1><%=j raw @entry.title%></h1>");
 $('#entry_detail_<%=@entry.id%>').append("<p><%=j raw @entry.date%></p>");
 $('#entry_detail_<%=@entry.id%>').append("<p><%= j link_to "Mark as Read", mark_entry_as_read_path(@entry.id), method: :delete, remote:true%></p>");
 $('#entry_detail_<%=@entry.id%>').append("<%=j raw @entry.content%>");

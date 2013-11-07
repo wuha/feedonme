@@ -1,18 +1,26 @@
-<h1>Dashboard of feedonme</h1>
 
-<p>Your are logged in! <%=@current_user.email%></p>
-<%= link_to "Logout", destroy_user_session_path, method: :delete%>
+<%#<p>Your are logged in! <%=@current_user.email%></p>
+<%#<%= link_to "Logout", destroy_user_session_path, method: :delete%>
 
 <div id="dashboard_wrapper">
 
 	<div id="dashboard_top">
-		<div id="dashboard_action_notification">
-		</div>
+		
+	</div>
+	<div id="dashboard_action_notification" hidden="true"><p></p></div>
+		
+	<div id="dashborad_subscription_form">		
 		<%=render "subscriptions/new" %>
+		<div id="dashboard_action_spinner"></div>
 	</div>
 	
-	<div id="dashboard_subscriptions">
-		<%= render "subscriptions/list", collection: @user_subscriptions%>
+	<div id="dashborad_options">
+		<%= link_to "Log out", destroy_session_path(:user), :method => :delete %>
+	</div>
+	
+	<div id="dashboard_subscriptions">		
+	
+		<%=render "subscriptions/list", collection: @user_subscriptions%>
 	</div>
 	<div id="dashboard_entries">
 		<ul></ul>

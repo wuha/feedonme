@@ -2,6 +2,7 @@ class Entry < ActiveRecord::Base
 	belongs_to :feed
 	has_many :unread_entries
 	
+	
 	def self.fetch_feed_entries
 		feeds=Feed.all
 		feeds.each do |feed|

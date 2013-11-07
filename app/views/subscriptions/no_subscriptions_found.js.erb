@@ -1,7 +1,10 @@
 $(function() {
-		$("#dashboard_action_notification").text("No Feeds Found!");
+		$("#dashboard_action_spinner").text("");
+		$("#dashboard_action_notification").fadeIn();	
+		$("#dashboard_action_notification p").text("No Feed Found");
     setTimeout(function() {
-        $("#dashboard_action_notification").text("");
+    		$("#dashboard_action_notification").fadeOut();
+        $("#dashboard_action_notification p").text("");
         $('#add_subscription_btn').attr("disabled", false);
-    }, 2000);    
+    }, 2300);    
 });

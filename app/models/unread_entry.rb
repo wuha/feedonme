@@ -7,8 +7,11 @@ class UnreadEntry < ActiveRecord::Base
 	
 		User.all.each do |user|
 			user.subscriptions.each do |subscription|
-				entreis=Entry.where("feed_id=?",subscription.feed_id).each do |entry|				
-					create(entry_id: entry.id, feed_id: subscription.feed_id, user_id: user.id)
+				entreis=Entry.where("feed_id=?",subscription.feed_id).each do |entry|	
+					begin
+						create(entry_id: entry.id, feed_id: subscription.feed_id, user_id: user.id, date: entry.date )
+					rescue
+					end
 				end
 			end
 		end		
