@@ -1,0 +1,17 @@
+<ul id="dashboard_entries_list">
+<li class="entry_unselected">
+<h2>
+<a data-remote="true" href="/entries/159">Ohne Alles: Cooler Master bietet Quickfire XT an</a>
+</h2>
+<p>
+<a data-remote="true" href="/entries/159">Die hierzulande bisher ausschließlich mit beleuchteten Schaltern erhält...</a>
+</p>
+</li>
+<li class="entry_unselected">
+<h2>
+<a data-remote="true" href="/entries/160">Nofan arbeitet an günstigem Passiv-Kühler</a>
+</h2>
+<p>
+<a data-remote="true" href="/entries/160">Durch besonders ausladende Konstruktionen und große Lamellenflächen erl...</a>
+</p>
+</li>
