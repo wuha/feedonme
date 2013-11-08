@@ -1,5 +1,5 @@
 <%require 'sanitize'%>
-$('#dashboard_entries ul').empty();
+$('#dashboard_entries_list').empty();
 <% @unread_entries.each do |entry|%>
 $('#dashboard_entries_list').append(
 														$('<li>').attr('class','entry_unselected').append('<h2><%= j link_to entry.title, show_feed_entry_path(entry.id), remote: true%></h2><p><%=j link_to Sanitize.clean(entry.content).at(0..70)+"...",show_feed_entry_path(entry.id), remote: true %></p>'));
