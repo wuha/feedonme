@@ -49,18 +49,20 @@ $(document).ready(function() {
 		$(this).addClass('subscription_selected').removeClass('subscription_unselected');
 		
 
-	});	
+	});
 	
-	$( "#dashboard_entries_list li" ).click(function(event) {
+	
+	$('#dashboard_entries_list').on('click','li',function(event) {
+	
+		console.log($( "#dashboard_entries_list li" ));
 		
 		//$('#dashboard_entries ul li').removeClass('entry_selected');
 		//$(this).addClass('entry_selected').removeClass('entry_unselected');
 		alert($(this).html());
 
-	});	
-			
-			
-
+});		
+	
+		
 });
 
 
