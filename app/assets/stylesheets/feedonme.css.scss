@@ -67,6 +67,14 @@ html{
 	
 }
 
+.subscription_selected{
+	background: #373c5a;
+}
+.subscription_unselected{
+	background: #252a3a;
+}
+
+
 #dashboard_entries{
 
 	position: absolute;
@@ -101,6 +109,13 @@ html{
 	  }
 	}	
 
+}
+
+.entry_selected{
+	background: #EEEEEE;
+}
+.entry_unselected{
+	background: white;
 }
 
 #dashboard_entry{

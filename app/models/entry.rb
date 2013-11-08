@@ -1,6 +1,7 @@
 class Entry < ActiveRecord::Base
 	belongs_to :feed
 	has_many :unread_entries
+	has_many :read_entries
 	
 	
 	def self.fetch_feed_entries

@@ -13,6 +13,7 @@ class UnreadEntriesController < ApplicationController
 	
 	def delete
 		current_user.unread_entries.where("entry_id=?",params[:id]).first.delete
+		ReadEntry.create(entry_id: params[:id], user_id: current_user)
 	end
 
 

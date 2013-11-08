@@ -33,22 +33,49 @@ $(document).ready(function() {
 	    $('#new_subscriptions_sumbit_btn').fadeIn();
 		};
 
-	});
-	
-	
+	});	
 	
 	$( "#new_subscriptions_sumbit_btn" ).click(function(event) {
 		
 		var target = document.getElementById('dashboard_action_spinner');
 		var spinner = new Spinner(opts).spin(target);
 
-	});
-
+	});	
 	
-	
+	$( "#dashboard_subscription_list li" ).click(function(event) {
+		
+		
+		$('#dashboard_subscription_list li').removeClass('subscription_selected');
+		$(this).addClass('subscription_selected').removeClass('subscription_unselected');
 		
 
+	});	
+	
+	$( "#dashboard_entries_list li" ).click(function(event) {
+		
+		//$('#dashboard_entries ul li').removeClass('entry_selected');
+		//$(this).addClass('entry_selected').removeClass('entry_unselected');
+		alert($(this).html());
+
+	});	
+			
+			
+
 });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

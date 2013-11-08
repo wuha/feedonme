@@ -1,4 +1,3 @@
-
 require 'clockwork'
 require './config/boot'
 require './config/environment'
@@ -15,6 +14,6 @@ module Clockwork
   #   puts "Running #{job}, at #{time}"
   # end
 
-  every(60.seconds, 'Fetch.Entries')
+  every(320.seconds, 'Fetch.Entries')
  
 end

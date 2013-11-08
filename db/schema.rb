@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131017092330) do
+ActiveRecord::Schema.define(:version => 20131107150926) do
 
   create_table "entries", :force => true do |t|
     t.integer  "feed_id"
@@ -27,6 +27,15 @@ ActiveRecord::Schema.define(:version => 20131017092330) do
     t.string   "name"
     t.string   "url"
     t.integer  "used_count"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "read_entries", :force => true do |t|
+    t.integer  "entry_id"
+    t.integer  "feed_id"
+    t.integer  "user_id"
+    t.datetime "date"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -47,8 +56,8 @@ ActiveRecord::Schema.define(:version => 20131017092330) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
-  
-  add_index "unread_entries", ["entry_id","user_id"], name: "index_unread_entries", unique: true
+
+  add_index "unread_entries", ["entry_id", "user_id"], :name => "index_unread_entries"
 
   create_table "users", :force => true do |t|
     t.string   "email",                  :default => "", :null => false

@@ -1,4 +1,6 @@
 Feedonme::Application.routes.draw do
+  resources :read_entries
+
   resources :unread_entries
 
   resources :feeds
