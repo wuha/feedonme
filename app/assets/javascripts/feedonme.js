@@ -19,6 +19,7 @@ var opts = {
 
 
 
+
 $(document).ready(function() {
 	$('#new_subscriptions_sumbit_btn').hide();
 

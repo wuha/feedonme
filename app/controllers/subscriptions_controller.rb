@@ -36,8 +36,9 @@ class SubscriptionsController < ApplicationController
 	def self.list(user)
 		@subscriptions=Array.new
 	
-		Subscription.where("user_id=?",user).each do |subscription|
-			@subscriptions<<Feed.find(subscription.feed_id)
+		Subscription.where("user_id=?",user.id).each do |subscription|			
+			#@subscriptions<<Feed.find(subscription.feed_id)#<< {unread: user.unread_entries.where("feed_id=?",subscription.feed_id).count}
+			@subscriptions<<{feed_id: Feed.find(subscription.feed_id).id, name: Feed.find(subscription.feed_id).name, unread: user.unread_entries.where("feed_id=?",subscription.feed_id).count }
 		end
 		@subscriptions
 	end
