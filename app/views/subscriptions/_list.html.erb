@@ -1,4 +1,5 @@
 <ul id="dashboard_subscription_list">
+<li id="feed_id_all_unread>" class="subscription_unselected"><%=link_to "all unread", show_feed_unread_entries_path("all"), method: :get, remote: true%></li>
 <% @user_subscriptions.each do |subscription|%>
 	<li id="feed_id_<%=subscription.id%>" class="subscription_unselected"><%= link_to subscription.name, show_feed_unread_entries_path(subscription.id), method: :get, remote: true%></li>
 <%end%>

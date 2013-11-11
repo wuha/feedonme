@@ -25,7 +25,8 @@ ActiveRecord::Schema.define(:version => 20131107150926) do
 
   create_table "feeds", :force => true do |t|
     t.string   "name"
-    t.string   "url"
+    t.string   "feedurl"
+    t.string   "pageurl"
     t.integer  "used_count"
     t.datetime "created_at"
     t.datetime "updated_at"

@@ -13,6 +13,7 @@ class EntriesController < ApplicationController
 			format.js
 			format.html
 		end	
+	
 	end
 
 end

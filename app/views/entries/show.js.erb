@@ -5,3 +5,7 @@ $('#entry_detail_<%=@entry.id%>').append("<p><%=j raw @entry.date%></p>");
 $('#entry_detail_<%=@entry.id%>').append("<p><%= j link_to "Mark as Read", mark_entry_as_read_path(@entry.id), method: :delete, remote:true%></p>");
 $('#entry_detail_<%=@entry.id%>').append("<%=j raw @entry.content%>");
 
+$.ajax({
+      type: "Delete",
+      url: "/entries/<%= @entry.id %>/mark_as_read"
+});

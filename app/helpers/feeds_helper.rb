@@ -43,5 +43,19 @@ module FeedsHelper
 			end			
 			@feed_list				
 	end
+	
+	
+	def get_fav_icon(url_input)
+	
+		page=Nokogiri::HTML(open(url_input))
+		
+		
+		page.css('link[rel=icon]').attribute("href").to_str
+	
+	
+	end
+	
+	
+
 
 end

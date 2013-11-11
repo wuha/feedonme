@@ -8,7 +8,7 @@ class Entry < ActiveRecord::Base
 		feeds=Feed.all
 		feeds.each do |feed|
 			current_feed=Feed.find(feed.id)
-			feedzirra = Feedzirra::Feed.fetch_and_parse(feed.url)
+			feedzirra = Feedzirra::Feed.fetch_and_parse(feed.feedurl)
 			feedzirra.entries.each do |entry|
 				if entry.title.nil?
 				else
@@ -22,8 +22,10 @@ class Entry < ActiveRecord::Base
 				
 					if entry.content
 						current_feed.entries<<Entry.find_or_create_by_unique_entriy_hash(unique_entriy_hash,title: entry.title, content: entry.content, unique_entriy_hash: unique_entriy_hash, date: entry_date)
-					else
+					elsif entry.summary
 						current_feed.entries<<Entry.find_or_create_by_unique_entriy_hash(unique_entriy_hash,title: entry.title, content: entry.summary, unique_entriy_hash: unique_entriy_hash, date: entry_date)
+					else
+						current_feed.entries<<Entry.find_or_create_by_unique_entriy_hash(unique_entriy_hash,title: entry.title, content: "No content", unique_entriy_hash: unique_entriy_hash, date: entry_date)
 					end
 				end
 			end		
