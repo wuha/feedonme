@@ -13,11 +13,12 @@ end
 group :development, :test do
  gem 'sqlite3'
  gem 'heroku'
+ gem "rest-open-uri", "~> 1.0.0"
 end
 
 
 gem "feedzirra", "~> 0.1.3"
-gem "rest-open-uri", "~> 1.0.0"
+
 gem 'sidekiq'
 gem 'devise'
 gem 'sanitize'
