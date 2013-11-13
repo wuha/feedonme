@@ -1,2 +1,6 @@
 $('#entries_id_<%=@entry_id%>').removeClass('entry_unread');
 $('#entries_id_<%=@entry_id%>').addClass('entry_read');
+var current_read_count=parseInt($('#subscription_unread_count_id_<%=@feed_id%>').html());
+var current_read_count_all=parseInt($('#subscription_unread_count_id_all').html());
+$('#subscription_unread_count_id_<%=@feed_id%>').html(current_read_count-1);
+$('#subscription_unread_count_id_all').html(current_read_count_all-1);

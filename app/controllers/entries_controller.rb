@@ -9,6 +9,7 @@ class EntriesController < ApplicationController
 	
 	def show
 		@entry=Entry.find(params[:id])
+		@feedname=Feed.where("id=?",@entry.feed_id).first.name
 		respond_to do |format|
 			format.js
 			format.html

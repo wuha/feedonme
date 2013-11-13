@@ -38,8 +38,10 @@ html{
 			a{
 				color: white;
 				text-decoration: none;
-				
+				//display: block; 
+				width: 100%;		
 			}
+			width: 150px;
 			font-size: small;
 			color: white;
 			overflow: hidden;
@@ -278,7 +280,43 @@ html{
 }
 
 
+.unread_feed_count{
 
+	z-index: 300000;
+	background: #1b98f8;
+  position: absolute;
+  left: 165px;
+  width: 26px;
+  text-align: center;
+  -moz-border-radius: 3px; 
+  -webkit-border-radius: 3px; 
+  border-radius: 3px;
+  display: inline;
+		
+}
+
+.entry_detail_name{
+	font-size: small;
+	padding-bottom: 2px;
+}
+
+.entry_detail_date{
+	font-size: small;
+	padding-bottom: 2px;
+}
+
+.entry_detail_header{
+	font-size: 36px;
+	padding-bottom: 5px;
+}
+
+.entry_detail_text{
+	padding-top: 5px;
+}
+
+hr{
+	color: #d9d4d4;
+}
 
 
 

@@ -1,6 +1,6 @@
 <ul id="dashboard_subscription_list">
-<li id="feed_id_all_unread>" class="subscription_unselected"><%=link_to "all unread", show_feed_unread_entries_path("all"), method: :get, remote: true%><div><%=@user_subscription_all_unread_count%></div></li>
+<li id="feed_id_all_unread>" class="subscription_unselected"><%=link_to "all unread", show_feed_unread_entries_path("all"), method: :get, remote: true%><div class="unread_feed_count"><p id="subscription_unread_count_id_all"> <%=@user_subscription_all_unread_count%></p></div></li>
 <% @user_subscriptions.each do |subscription|%>
-	<li id="feed_id_<%=subscription[:feed_id]%>" class="subscription_unselected"><%= link_to subscription[:name], show_feed_unread_entries_path(subscription[:feed_id]), method: :get, remote: true%><div>[<%=subscription[:unread]%>]</div></li>
+	<li id="feed_id_<%=subscription[:feed_id]%>" class="subscription_unselected"><%= link_to subscription[:name], show_feed_unread_entries_path(subscription[:feed_id]), method: :get, remote: true%><div class="unread_feed_count"><p id="subscription_unread_count_id_<%=subscription[:feed_id]%>"> <%=subscription[:unread]%></p></div></li>
 <%end%>
 </ul>

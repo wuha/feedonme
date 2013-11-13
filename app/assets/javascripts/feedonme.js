@@ -58,7 +58,6 @@ $(document).ready(function() {
 		
 		$('#dashboard_entries ul li').removeClass('entry_selected');
 		$(this).addClass('entry_selected').removeClass('entry_unselected');
-		//alert($(this).html());
 
 });		
 	
