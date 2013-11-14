@@ -309,6 +309,11 @@ html{
 .entry_detail_header{
 	font-size: 36px;
 	padding-bottom: 5px;
+	
+	a{
+		text-decoration: none;
+		color: black;
+	}
 }
 
 .entry_detail_text{

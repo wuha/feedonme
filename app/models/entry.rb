@@ -21,11 +21,11 @@ class Entry < ActiveRecord::Base
 					end
 				
 					if entry.content
-						current_feed.entries<<Entry.find_or_create_by_unique_entriy_hash(unique_entriy_hash,title: entry.title, content: entry.content, unique_entriy_hash: unique_entriy_hash, date: entry_date)
+						current_feed.entries<<Entry.find_or_create_by_unique_entriy_hash(unique_entriy_hash,title: entry.title, content: entry.content, unique_entriy_hash: unique_entriy_hash, date: entry_date, url: entry.url)
 					elsif entry.summary
-						current_feed.entries<<Entry.find_or_create_by_unique_entriy_hash(unique_entriy_hash,title: entry.title, content: entry.summary, unique_entriy_hash: unique_entriy_hash, date: entry_date)
+						current_feed.entries<<Entry.find_or_create_by_unique_entriy_hash(unique_entriy_hash,title: entry.title, content: entry.summary, unique_entriy_hash: unique_entriy_hash, date: entry_date, url: entry.url)
 					else
-						current_feed.entries<<Entry.find_or_create_by_unique_entriy_hash(unique_entriy_hash,title: entry.title, content: "No content", unique_entriy_hash: unique_entriy_hash, date: entry_date)
+						current_feed.entries<<Entry.find_or_create_by_unique_entriy_hash(unique_entriy_hash,title: entry.title, content: "No content", unique_entriy_hash: unique_entriy_hash, date: entry_date, url: entry.url)
 					end
 				end
 			end		

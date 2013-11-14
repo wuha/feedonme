@@ -19,6 +19,7 @@ ActiveRecord::Schema.define(:version => 20131107150926) do
     t.text     "content"
     t.datetime "date"
     t.string   "unique_entriy_hash"
+    t.text   	 "url"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
